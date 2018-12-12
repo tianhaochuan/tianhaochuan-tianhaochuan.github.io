@@ -1,0 +1,63 @@
+.one li.gift1 a{
+	background-image: url('../img/giftpicture/gift1.jpg');
+}
+.one li.gift2 a{
+	background-image: url('../img/giftpicture/gift2.jpg');
+
+}
+.one li.gift3 a{
+	background-image: url('../img/giftpicture/gift3.jpg');
+}
+.one li.gift4 a{
+	background-image: url('../img/giftpicture/gift4.jpg');
+}
+.one li.gift5 a{
+	background-image: url('../img/giftpicture/gift5.jpg');
+}
+.one li.gift6 a{
+	background-image: url('../img/giftpicture/gift6.jpg');
+}
+.one a{
+	display: block;
+	min-height: 20px;
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	padding: 0 0 0 30px;
+	margin: 0 0 10px;
+ }
+nav{
+	background: #599A68;
+	filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5;
+}
+nav a{
+	color: #fff;
+}
+
+nav a:hover{
+	color: #000;
+}
+nav{
+	width: 40%;
+	padding: 10px 0 20px 0;
+	height: 40%;
+} 
+nav ul li{
+	list-style-type: : none;
+}
+nav a{
+	font-weight: 800;
+	padding: 15px 10px;	
+}
+
+a{
+	text-decoration:none;
+ }
+h1{
+	font-family: 'Unlock', cursive;
+}
+h2{
+	font-family: 'Dokdo', cursive;
+}
+ul{
+	font-family: 'Gloria Hallelujah', cursive;
+}

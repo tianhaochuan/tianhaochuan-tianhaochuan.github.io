@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>a song for you</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.4">
+<meta name="MobileOptimized" content="240">
+
+<link href="css/blue.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.jplayer.js"></script>
+<script type="text/javascript" src="js/lrc.js"></script>
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	outline:none;
+}
+ul, ol, dl {
+	list-style: none;
+}
+
+.music_box{margin:50px auto;width:422px;}
+.content {width: 402px;height:200px;overflow:hidden;padding:10px;background:#ccc;}
+#lrc_list{margin:10px auto;background:#ccc;}
+#lrc_list li{font:normal 14px/2.1 'microsoft yahei';text-align:center;}
+#lrc_list li.hover {color:red;font-weight:bold;}
+</style>
+
+<script>
+//<![CDATA[
+$(document).ready(function(){
+	$("#jquery_jplayer_1").jPlayer({
+		ready: function (event) {
+			$(this).jPlayer("setMedia", {
+				mp3:"Lana Del Rey - Young And Beautiful.flac" //mp3的播放地址
+			});
+		},
+		timeupdate: function(event) {
+			if(event.jPlayer.status.currentTime==0){
+				time = "";
+			}else {
+				time = event.jPlayer.status.currentTime;
+			}
+		},
+		play: function(event) {
+			//点击开始方法调用lrc。start歌词方法 返回时间time
+			$.lrc.start($('#lrc_content').val(), function() {
+				return time;
+			});
+		},
+		ended:function(event){
+			$("#lrc_list").removeAttr("style").html("<li>歌曲播放完毕！</li>");
+		},
+		swfPath: "/js",  		//存放jplayer.swf的决定路径
+		solution:"html, flash", //支持的页面
+		supplied: "mp3",		//支持的音频的格式
+		wmode: "window"
+	});
+});
+//]]>
+</script>
+</head>
+<body style=" background-repeat:no-repeat;
+background-size:cover;"
+background="img/xue.jpg">
+<h1 style="font-family:LiSu">接下来请静静的欣赏这首歌曲</h1>
+<h2 style="font-family:LiSu">你送给我的第一首音乐</h2>
+<textarea id="lrc_content" name="textfield" cols="70" rows="10" style="display:none;"> 
+[ar:Lana Del Rey]
+
+[ti:Young And Beautiful]
+
+[00:00.00]lana del rey - young and beautiful
+
+[00:15.36]I've seen the world
+
+[00:17.75]Done it all, had my cake now
+
+[00:23.79]Diamonds, brilliant, and Bel-Air now
+
+[00:31.69]Hot summer nights, mid-July
+
+[00:36.15]When you and I were forever wild
+
+[00:40.21]The crazy days, the city lights
+
+[00:44.07]The way you'd play with me like a child
+
+[00:49.46]Will you still love me when I'm no longer young and beautiful
+
+[00:57.73]Will you still love me when I got nothing but my aching soul
+
+[01:05.00]I know you will, I know you will
+
+[01:08.85]I know that you will
+
+[01:13.22]Will you still love me when I'm no longer beautiful
+
+[01:21.90]I've seen the world, lit it up as my stage now
+
+[01:29.88]Channeling angels in the new age now
+
+[01:38.01]Hot summer days, rock and roll
+
+[01:42.22]The way you'd play for me at your show
+
+[01:46.29]And all the ways I got to know
+
+[01:50.40]Your pretty face and electric soul
+
+[01:55.71]Will you still love me when I'm no longer young and beautiful
+
+[02:03.93]Will you still love me when I got nothing but my aching soul
+
+[02:11.10]I know you will, I know you will
+
+[02:15.12]I know that you will
+
+[02:19.43]Will you still love me when I'm no longer beautiful
+
+[02:28.59]Dear lord when I get to heaven
+
+[02:32.50]Please let me bring my man
+
+[02:36.92]When he comes tell me that you'll let me
+
+[02:41.02]Father tell me if you can
+
+[02:44.37]Oh that grace, oh that body
+
+[02:48.44]Oh that face makes me wanna party
+
+[02:52.54]He's my sun, he makes me shine like diamonds
+
+[03:02.13]Will you still love me when I'm no longer young and beautiful
+
+[03:10.73]Will you still love me when I got nothing but my aching soul
+
+[03:17.22]I know you will, I know you will
+
+[03:21.38]I know that you will
+
+[03:25.50]Will you still love me when I'm no longer beautiful
+
+[03:33.72]Will you still love me when I'm no longer beautiful
+
+[03:42.05]Will you still love me when I'm no longer young and beautiful
+
+
+</textarea>
+<div class="music_box">
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio">
+  <div class="jp-type-single">
+    <div class="jp-gui jp-interface">
+      <ul class="jp-controls">
+        <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+        <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+        <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+        <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+        <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+      </ul>
+      <div class="jp-progress">
+        <div class="jp-seek-bar">
+          <div class="jp-play-bar"></div>
+        </div>
+      </div>
+      <div class="jp-volume-bar">
+        <div class="jp-volume-bar-value"></div>
+      </div>
+      <div class="jp-time-holder">
+        <div class="jp-current-time"></div>
+        <div class="jp-duration"></div>
+        <ul class="jp-toggles">
+          <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+          <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="jp-title">
+    </div>
+    <div class="jp-no-solution"> <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>. </div>
+  </div>
+</div>
+<div class="content">
+    <ul id="lrc_list">
+    	<li>点击开始播放……</li>
+    </ul>
+</div>
+</div>
+<div  style="font-family:华文行楷;font-size: 40px">
+<pre>          卜     驿   寂   已   更   无   一   零   只</pre>
+<pre>          算     外   寞   是   著   意   任   落   有</pre>
+<pre>          子     断   开   黄   风   苦   群   成   香    作者：【陆游】</pre>
+<pre>          ·     桥   无   昏   和   争   芳   泥   如</pre>
+<pre>          咏     边   主   昏   雨   春   妒   碾   故</pre>
+<pre>          梅               独                  作     </pre>
+<pre>                           自                  尘     </pre>
+ <pre>                           愁    
+</div>
+                    
+<p style="font-family: STXinwei">我的心如冬天的雪花儿，在这寒冷的圣诞慢慢的飘落，无论我在哪里，我离你只有一个转身的距离，让我的心陪你在这个平安夜里的共同舞起!</p>
+
+<a href="gift.html"target="_blank"style="text-decoration:none;"><button style="height: 50px;color: green;">点击开启下一份礼物-开启圣诞礼物（一定要好好听完，才能点哦！）</button></a>
+ 
+</body>
+</html>
